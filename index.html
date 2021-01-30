@@ -5,7 +5,50 @@
     </head>
     <body>
         <script>
-            
+            function computerPlay() {
+                let computerValue = Math.floor((Math.random() * 3) + 1);
+                let computerChoice;
+                if(computerValue === 1) {
+                    computerChoice = "rock";
+                } else if(computerValue === 2) {
+                    computerChoice = "paper";
+                } else if(computerValue === 3) {
+                    computerChoice = "scissors";
+                } else {
+                    computerChoice = "Something went wrong";
+                }
+                return computerChoice;
+            };
+
+            let playerSelection = "PAPER";
+            let computerSelection = computerPlay();
+            function playRound(playerSelection, computerSelection) {
+                let lower = playerSelection.toLowerCase();
+
+                if(lower === "rock" && computerSelection === "scissors") {
+                    return "Rock beats scissors! You win!";
+                } else if(lower === "rock" && computerSelection === "paper") {
+                    return "Paper beats rock! You lose :(";
+                } else if(lower === "paper" && computerSelection === "rock") {
+                    return "Paper beats rock! You win!";
+                } else if(lower === "paper" && computerSelection === "scissors") {
+                    return "Scissors beats paper! You lose :(";
+                } else if(lower === "scissors" && computerSelection === "paper") {
+                    return "Scissors beats paper! You win!";
+                } else if(lower === "scissors" && computerSelection === "rock") {
+                    return "Rock beats scissors! You lose :(";
+                } else {
+                    return "It's a draw. Play again!"
+                }
+            }
+
+            function game() {
+                let rounds = 5;
+                for(let i = 0; i < rounds; i++){
+                    return playRound(playerSelection, computerSelection);
+                }
+            }
+
         </script>
     </body>
 </html>
