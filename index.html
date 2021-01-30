@@ -5,6 +5,7 @@
     </head>
     <body>
         <script>
+            //deciding what the computer will choose
             function computerPlay() {
                 let computerValue = Math.floor((Math.random() * 3) + 1);
                 let computerChoice;
@@ -19,8 +20,10 @@
                 }
                 return computerChoice;
             };
-
+            // prompt for player to make selection
             let playerSelection = prompt("Rock, Paper, or Scissors?");
+
+            // determining the results of a single round
             function playRound(playerSelection, computerSelection) {
                 let lower = playerSelection.toLowerCase();
 
@@ -40,7 +43,7 @@
                     return "It's a draw. Play again!"
                 }
             }
-
+            // playing the game five times
             function game() {
                 let rounds = 5;
                 for(let i = 0; i < rounds; i++){
