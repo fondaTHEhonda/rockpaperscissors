@@ -9,16 +9,21 @@
             <button id='paper'>Paper</button>
             <button id='scissors'>Scissors</button>
         </div>
+        <div id="results">
+            <p id= 'player'></p>
+            <p id='computer'></p>
+            <p id='winner'></p>
+        </div>
         <script>
             // Defining user choice by which button is clicked
             document.getElementById('rock').onclick = user;
             document.getElementById('paper').onclick = user;
             document.getElementById('scissors').onclick = user;
 
-            // prompt for player to make selection
+            // once selection is clicked, rps runs
             function user() {
                 let playerSelection = this.id;
-                console.log('User: ' + playerSelection);
+                document.getElementById('player').textContent = 'User: ' + playerSelection;
 
                 let computerValue = Math.floor((Math.random() * 3) + 1);
                 let computerChoice;
@@ -32,9 +37,9 @@
                     computerChoice = "Something went wrong";
                 };
 
-                console.log('Computer: ' + computerChoice);
+                document.getElementById('computer').textContent = 'Computer: ' + computerChoice;
 
-                console.log(playRound(playerSelection, computerChoice));
+                document.getElementById('winner').textContent = playRound(playerSelection, computerChoice);
 
                 function playRound(playChoice, compChoice) {
                     if(playChoice === "rock" && compChoice === "scissors") {
