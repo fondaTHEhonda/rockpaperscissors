@@ -53,14 +53,6 @@
                 document.getElementById('computer').textContent = 'Computer: ' + computerChoice;
                 document.getElementById('results').textContent = playRound(playerSelection, computerChoice);
 
-                function theWinner() {
-                    if(playerScore === 5) {
-                        alert("YOU WIN");
-                    } else if(computerScore === 5) {
-                        alert("YOU LOSE");
-                    }
-                }
-
 
                 function playRound(playChoice, compChoice) {
                     if(
