@@ -16,6 +16,8 @@
 
             //Winner notification
             const winner = document.getElementById('winner');
+            const playAgain = document.getElementById('play-again');
+
             
             //refreshing to play again
             function restart() {
@@ -55,7 +57,9 @@
                             resultsDisplay.innerText = "You won this round!"
                             userScore.textContent = `${playerScore}`;
                             if(playerScore >=5) {
-                                winner.innerText = "Congratulations! You won!"
+                                winner.innerText = "Congratulations! You won!";
+                                playAgain.style.display = "block";
+                                playAgain.innerText = "Play Again?";
                                 rock.removeEventListener('click', playRound);
                                 paper.removeEventListener('click', playRound);
                                 scissors.removeEventListener('click', playRound);
@@ -73,6 +77,8 @@
                             compScore.textContent = `${computerScore}`;
                             if(computerScore >= 5) {
                                 winner.innerText = "You lost lol.";
+                                playAgain.style.display = "block";
+                                playAgain.innerText = "Play Again?";
                                 rock.removeEventListener('click', playRound);
                                 paper.removeEventListener('click', playRound);
                                 scissors.removeEventListener('click', playRound);
@@ -90,3 +96,4 @@
             rock.addEventListener('click', playRound);
             paper.addEventListener('click', playRound);
             scissors.addEventListener('click', playRound);
+            playAgain.addEventListener('click', restart);
