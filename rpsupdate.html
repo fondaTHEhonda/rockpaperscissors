@@ -3,12 +3,17 @@
     <head>
         <title>Rock, Paper, Scissors</title>
         <link  rel="stylesheet" href='style.css'>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     </head>
-    <body>
+    <body class='w3-blue-grey'>
+        <div id="heading">
+        <h1 class="center">Rock, Paper, Scissors</h1>
+        <p class="center">Coded by Fonda for The Odin Project</p>
+        </div>
         <div id="button">
-            <button id='rock'>Rock</button>
-            <button id='paper'>Paper</button>
-            <button id='scissors'>Scissors</button>
+            <button class="padding-left-right w3-button w3-pale-red w3-hover-red" id='Rock'>Rock</button>
+            <button class="padding-left-right w3-button w3-pale-yellow w3-hover-yellow" id='Paper'>Paper</button>
+            <button class="padding-left-right w3-button w3-pale-green w3-hover-green" id='Scissors'>Scissors</button>
         </div>
         <div id="game">
             <p id= 'player'></p>
@@ -16,14 +21,14 @@
             <p id='results'></p>
         </div>
         <div id='score'>
-            <p>Player Wins: </p>
-            <p id="pScore">0</p>
-            <p>Computer Wins: </p>
-            <p id="cScore">0</p>
+            <p class="bold">Player Wins: </p>
+            <p class="bold" id="pScore">0</p>
+            <p class="bold">Computer Wins: </p>
+            <p class="bold" id="cScore">0</p>
         </div>
-        <div>
+        <div id="game-over">
             <h1 id="winner"></h1>
-            <button id="play-again"></button>
+            <button class="w3-button w3-dark-grey w3-hover-black" id="play-again"></button>
         </div>
         <script src='rps.js'></script>
         </body>

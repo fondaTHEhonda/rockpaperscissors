@@ -1,7 +1,7 @@
             // Defining user choice by which button is clicked
-            const rock = document.getElementById('rock');
-            const paper = document.getElementById('paper');
-            const scissors = document.getElementById('scissors');
+            const rock = document.getElementById('Rock');
+            const paper = document.getElementById('Paper');
+            const scissors = document.getElementById('Scissors');
 
             //Scores
             let playerScore = 0;
@@ -29,11 +29,11 @@
                 let computerValue = Math.floor((Math.random() * 3) + 1);
                 let computerChoice;
                     if(computerValue === 1) {
-                        computerChoice = "rock";
+                        computerChoice = "Rock";
                 }   else if(computerValue === 2) {
-                        computerChoice = "paper";
+                        computerChoice = "Paper";
                 }   else if(computerValue === 3) {
-                        computerChoice = "scissors";
+                        computerChoice = "Scissors";
                 }   else {
                         computerChoice = "Something went wrong";
                 }
@@ -46,14 +46,14 @@
                     computerSelection = computerPlay();
 
                     if(
-                        (playerSelection === "rock" && computerSelection === "scissors") || 
-                        (playerSelection === "paper" && computerSelection === "rock") ||
-                        (playerSelection === "scissors" && computerSelection === "paper" &&
+                        (playerSelection === "Rock" && computerSelection === "Scissors") || 
+                        (playerSelection === "Paper" && computerSelection === "Rock") ||
+                        (playerSelection === "Scissors" && computerSelection === "Paper" &&
                         (playerScore < 5 || computerScore < 5)) 
                     ){
                             playerScore++;
-                            userChoice.innerText = playerSelection;
-                            compChoice.innerText = computerSelection;
+                            userChoice.innerText = "Player: " + playerSelection;
+                            compChoice.innerText = "Computer: " + computerSelection;
                             resultsDisplay.innerText = "You won this round!"
                             userScore.textContent = `${playerScore}`;
                             if(playerScore >=5) {
@@ -65,14 +65,14 @@
                                 scissors.removeEventListener('click', playRound);
                             }
                 } else if(
-                        (playerSelection === "rock" && computerSelection === "paper") ||
-                        (playerSelection === "paper" && computerSelection === "scissors") ||
-                        (playerSelection === "scissors" && computerSelection === "rock" &&
+                        (playerSelection === "Rock" && computerSelection === "Paper") ||
+                        (playerSelection === "Paper" && computerSelection === "Scissors") ||
+                        (playerSelection === "Scissors" && computerSelection === "Rock" &&
                         (playerScore < 5 || computerScore < 5)) 
                 ){
                             computerScore++;
-                            userChoice.innerText = playerSelection;
-                            compChoice.innerText = computerSelection;
+                            userChoice.innerText = "Player: " + playerSelection;
+                            compChoice.innerText = "Computer: " + computerSelection;
                             resultsDisplay.innerText = "You lost this round!"
                             compScore.textContent = `${computerScore}`;
                             if(computerScore >= 5) {
@@ -84,8 +84,8 @@
                                 scissors.removeEventListener('click', playRound);
                             }
                 } else {
-                    userChoice.innerText = playerSelection;
-                    compChoice.innerText = computerSelection;
+                    userChoice.innerText = "Player: " + playerSelection;
+                    compChoice.innerText = "Computer: " + computerSelection;
                     resultsDisplay.innerText = "This round is a draw!"
                 } 
             } 
