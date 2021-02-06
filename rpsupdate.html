@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Rock, Paper, Scissors</title>
+        <link  rel="stylesheet" href='style.css'>
     </head>
     <body>
         <div id="button">
@@ -23,63 +24,6 @@
         <div>
             <h1 id="winner"></h1>
         </div>
-        <script>
-            // Defining user choice by which button is clicked
-            document.getElementById('rock').onclick = user;
-            document.getElementById('paper').onclick = user;
-            document.getElementById('scissors').onclick = user;
-
-            // once selection is clicked, rps runs
-            function user() {
-                let playerScore = document.getElementById('pScore');
-                let computerScore = document.getElementById('cScore');
-
-                let playerSelection = this.id;
-                
-
-                let computerValue = Math.floor((Math.random() * 3) + 1);
-                let computerChoice;
-                if(computerValue === 1) {
-                    computerChoice = "rock";
-                } else if(computerValue === 2) {
-                    computerChoice = "paper";
-                } else if(computerValue === 3) {
-                    computerChoice = "scissors";
-                } else {
-                    computerChoice = "Something went wrong";
-                };
-
-                document.getElementById('player').textContent = 'User: ' + playerSelection;
-                document.getElementById('computer').textContent = 'Computer: ' + computerChoice;
-                document.getElementById('results').textContent = playRound(playerSelection, computerChoice);
-
-
-                function playRound(playChoice, compChoice) {
-                    if(
-                        (playChoice === "rock" && compChoice === "scissors") || 
-                        (playChoice === "paper" && compChoice === "rock") ||
-                        (playChoice === "scissors" && compChoice === "paper") &&
-                        (playerScore < 5 || computerScore < 5)) {
-                            playerScore.textContent = parseInt(playerScore.textContent) + 1;
-                            return "You won the round!";
-                            if(playerScore === 5) {
-                                alert("YOU WIN");
-                            }
-                } else if(
-                        (playChoice === "rock" && compChoice === "paper") ||
-                        (playChoice === "paper" && compChoice === "scissors") ||
-                        (playChoice === "scissors" && compChoice === "rock") &&
-                        (playerScore < 5 || computerScore < 5)) {
-                            computerScore.textContent = parseInt(computerScore.textContent) + 1;
-                            return "You lost the round!";
-                            if(computerScore === 5) {
-                                alert("YOU LOSE");
-                            }
-                } else {
-                    return "It's a draw. Play again!";
-                } 
-            } 
-        } 
-        </script>
-    </body>
+        <script src='rps.js'></script>
+        </body>
 </html>
